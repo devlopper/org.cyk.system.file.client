@@ -10,5 +10,5 @@ import org.cyk.utility.client.controller.AbstractControllerEntityImpl;
 @Singleton
 public class FileControllerImpl extends AbstractControllerEntityImpl<File> implements FileController,Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 }
