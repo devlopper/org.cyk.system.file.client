@@ -37,7 +37,7 @@ public class FileControllerIntegrationTest extends AbstractControllerArquillianI
 				assertThat(file.getContent().getExtension()).isEqualTo("txt");
 				assertThat(file.getContent().getMimeType()).isEqualTo("text/plain");
 				assertThat(file.getContent().getName()).isEqualTo("myfile");
-				assertThat(file.getContent().getUniformResourceLocator()).isEqualTo(null);
+				assertThat(file.getContent().getUniformResourceLocator()).isEqualTo("http://localhost:8080/file/server/file/"+file.getIdentifier()+"/download?isinline=true");
 				assertThat(file.getContent().getBytes()).isNull();
 				
 				file = __inject__(FileController.class).readOne(identifier, new Properties().setFields("name,extension,mimeType"));

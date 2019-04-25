@@ -8,7 +8,7 @@ import org.cyk.utility.__kernel__.annotation.Client;
 import org.cyk.utility.__kernel__.properties.Properties;
 import org.cyk.utility.client.controller.AbstractInstanceBuilderImpl;
 
-@Client
+@org.cyk.system.file.server.annotation.File @Client
 public class InstanceBuilderImpl extends AbstractInstanceBuilderImpl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
