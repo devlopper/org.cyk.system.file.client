@@ -4,13 +4,16 @@ import java.io.Serializable;
 
 import org.cyk.system.file.client.controller.entities.File;
 import org.cyk.system.file.server.representation.entities.FileDto;
-import org.cyk.utility.client.controller.AbstractInstanceBuilderFunctionRunnableImpl;
+import org.cyk.utility.__kernel__.annotation.Client;
+import org.cyk.utility.__kernel__.properties.Properties;
+import org.cyk.utility.client.controller.AbstractInstanceBuilderImpl;
 
-public class InstanceBuilderFunctionRunnableImpl extends AbstractInstanceBuilderFunctionRunnableImpl implements Serializable {
+@Client
+public class InstanceBuilderImpl extends AbstractInstanceBuilderImpl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void __copy__(Object source, Object destination) {
+	protected void __copy__(Object source, Object destination,Properties properties) {
 		if(source instanceof FileDto && destination instanceof File) {
 			FileDto representation = (FileDto) source;
 			File data = (File) destination;
@@ -36,8 +39,7 @@ public class InstanceBuilderFunctionRunnableImpl extends AbstractInstanceBuilder
 				representation.setBytes(data.getContent().getBytes());	
 			}
 		}else
-			super.__copy__(source, destination);
-		
+			super.__copy__(source, destination,properties);
 	}
 	
 }
