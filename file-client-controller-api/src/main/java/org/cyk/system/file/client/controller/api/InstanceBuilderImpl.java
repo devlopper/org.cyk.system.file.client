@@ -36,7 +36,7 @@ public class InstanceBuilderImpl extends AbstractInstanceBuilderImpl implements 
 				representation.setName(data.getContent().getName());
 				representation.setMimeType(data.getContent().getMimeType());
 				representation.setExtension(data.getContent().getExtension());
-				representation.setBytes(data.getContent().getBytes());	
+				representation.setBytes(data.getContent().getBytes());
 			}
 		}else
 			super.__copy__(source, destination,properties);
