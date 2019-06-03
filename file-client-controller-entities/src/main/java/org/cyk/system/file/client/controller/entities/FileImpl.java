@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 import org.cyk.utility.client.controller.component.annotation.Input;
 import org.cyk.utility.client.controller.component.annotation.InputFile;
-import org.cyk.utility.client.controller.data.AbstractDataImpl;
+import org.cyk.utility.client.controller.data.AbstractDataIdentifiedByStringImpl;
 
-public class FileImpl extends AbstractDataImpl implements File,Serializable {
+public class FileImpl extends AbstractDataIdentifiedByStringImpl implements File,Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Input @InputFile
@@ -23,8 +23,13 @@ public class FileImpl extends AbstractDataImpl implements File,Serializable {
 	}
 	
 	@Override
-	public File setIdentifier(Object identifier) {
+	public File setIdentifier(String identifier) {
 		return (File) super.setIdentifier(identifier);
 	}
 	
+	@Override
+	public String toString() {
+		org.cyk.utility.file.File content = getContent();
+		return content == null ? super.toString() : content.getNameAndExtension();
+	}
 }

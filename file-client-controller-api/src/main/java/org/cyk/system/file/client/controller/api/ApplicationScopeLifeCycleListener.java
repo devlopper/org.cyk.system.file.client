@@ -4,11 +4,7 @@ import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import org.cyk.system.file.server.annotation.File;
 import org.cyk.utility.__kernel__.AbstractApplicationScopeLifeCycleListener;
-import org.cyk.utility.__kernel__.annotation.Client;
-import org.cyk.utility.instance.InstanceBuilder;
-import org.cyk.utility.system.node.SystemNodeClient;
 
 @ApplicationScoped
 public class ApplicationScopeLifeCycleListener extends AbstractApplicationScopeLifeCycleListener implements Serializable {
@@ -16,9 +12,7 @@ public class ApplicationScopeLifeCycleListener extends AbstractApplicationScopeL
 
 	@Override
 	public void __initialize__(Object object) {
-		__inject__(org.cyk.utility.client.controller.ApplicationScopeLifeCycleListener.class).initialize(null);
-		__setQualifiersClasses__(InstanceBuilder.class, File.class,Client.class);
-		__inject__(SystemNodeClient.class).setName("Gestion des fichiers");	
+		__inject__(org.cyk.system.file.client.controller.entities.ApplicationScopeLifeCycleListener.class).initialize(null);
 	}
 	
 	@Override
@@ -26,5 +20,4 @@ public class ApplicationScopeLifeCycleListener extends AbstractApplicationScopeL
 	
 	/**/
 	
-	public static final Integer LEVEL = new Integer(org.cyk.utility.client.controller.ApplicationScopeLifeCycleListener.LEVEL+100);
 }

@@ -1,14 +1,12 @@
-package org.cyk.system.file.client.controller.api;
+package org.cyk.system.file.client.controller.entities;
 
 import java.io.Serializable;
 
-import org.cyk.system.file.client.controller.entities.File;
 import org.cyk.system.file.server.representation.entities.FileDto;
-import org.cyk.utility.__kernel__.annotation.Client;
 import org.cyk.utility.__kernel__.properties.Properties;
 import org.cyk.utility.client.controller.AbstractInstanceBuilderImpl;
 
-@org.cyk.system.file.server.annotation.File @Client
+@org.cyk.system.file.server.annotation.System
 public class InstanceBuilderImpl extends AbstractInstanceBuilderImpl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
