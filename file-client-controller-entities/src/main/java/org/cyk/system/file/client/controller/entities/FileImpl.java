@@ -17,6 +17,11 @@ public class FileImpl extends AbstractDataIdentifiedByStringImpl implements File
 	}
 	
 	@Override
+	public org.cyk.utility.file.File getContent(Boolean injectIfNull) {
+		return (org.cyk.utility.file.File) __getInjectIfNull__(injectIfNull);
+	}
+	
+	@Override
 	public File setContent(org.cyk.utility.file.File content) {
 		this.content = content;
 		return this;
