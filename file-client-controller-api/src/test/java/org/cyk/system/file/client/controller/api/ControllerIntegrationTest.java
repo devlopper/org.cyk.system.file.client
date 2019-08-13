@@ -89,7 +89,12 @@ public class ControllerIntegrationTest extends AbstractControllerArquillianInteg
 		FilterDto filter = new FilterDto().setKlass(org.cyk.system.file.server.persistence.entities.File.class).addField(org.cyk.system.file.server.persistence.entities.File.FIELD_NAME, string);
 		assertThat(__inject__(FileController.class).read(new Properties().setIsPageable(Boolean.TRUE).setFrom(0).setCount(count)
 				.setFilters(filter)))
-				.as("number of file where name contains <<"+string+">> is incorrect").hasSize(count);
+				.as("complex : number of file where name contains <<"+string+">> is incorrect").hasSize(count);
+		
+		filter = new FilterDto().setValue(string);
+		assertThat(__inject__(FileController.class).read(new Properties().setIsPageable(Boolean.TRUE).setFrom(0).setCount(count)
+				.setFilters(filter)))
+				.as("global : number of file where name contains <<"+string+">> is incorrect").hasSize(count);
 	}
 	
 	/**/
