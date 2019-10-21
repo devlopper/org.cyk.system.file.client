@@ -23,7 +23,7 @@ public class InstanceBuilderImpl extends AbstractInstanceBuilderImpl implements 
 			content.setName(representation.getName());
 			content.setMimeType(representation.getMimeType());
 			content.setExtension(representation.getExtension());
-			data.setContent(content);
+			//data.setContent(content);
 		}else if(source instanceof File && destination instanceof FileDto) {
 			File data = (File) source;
 			FileDto representation = (FileDto) destination;

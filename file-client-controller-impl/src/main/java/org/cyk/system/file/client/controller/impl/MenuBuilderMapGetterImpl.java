@@ -7,7 +7,6 @@ import org.cyk.system.file.client.controller.entities.File;
 import org.cyk.utility.client.controller.component.menu.AbstractMenuBuilderMapGetterImpl;
 import org.cyk.utility.client.controller.component.menu.MenuBuilder;
 import org.cyk.utility.client.controller.component.menu.MenuItemBuilder;
-import org.cyk.utility.system.action.SystemActionRead;
 
 @org.cyk.system.file.server.annotation.System
 public class MenuBuilderMapGetterImpl extends AbstractMenuBuilderMapGetterImpl implements Serializable {
@@ -23,7 +22,7 @@ public class MenuBuilderMapGetterImpl extends AbstractMenuBuilderMapGetterImpl i
 		sessionMenuBuilder.addItems(
 				__inject__(MenuItemBuilder.class).setCommandableName("Fichier")
 					.addEntitiesList(File.class)
-					.addEntitySelect(File.class,SystemActionRead.class,null)
+					//.addEntitySelect(File.class,SystemActionRead.class,null)
 			)
 		;
 	}

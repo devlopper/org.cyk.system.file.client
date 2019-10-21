@@ -10,19 +10,21 @@ public class FileImpl extends AbstractDataIdentifiedByStringImpl implements File
 	private static final long serialVersionUID = 1L;
 
 	@Input @InputFile
-	private org.cyk.utility.file.File content;
+	private org.cyk.utility.__kernel__.file.File content;
 	
-	public org.cyk.utility.file.File getContent() {
+	public org.cyk.utility.__kernel__.file.File getContent() {
 		return content;
 	}
 	
 	@Override
-	public org.cyk.utility.file.File getContent(Boolean injectIfNull) {
-		return (org.cyk.utility.file.File) __getInjectIfNull__(injectIfNull);
+	public org.cyk.utility.__kernel__.file.File getContent(Boolean injectIfNull) {
+		if(content == null && Boolean.TRUE.equals(injectIfNull))
+			content = __inject__(org.cyk.utility.__kernel__.file.File.class);
+		return content;
 	}
 	
 	@Override
-	public File setContent(org.cyk.utility.file.File content) {
+	public File setContent(org.cyk.utility.__kernel__.file.File content) {
 		this.content = content;
 		return this;
 	}
@@ -34,7 +36,7 @@ public class FileImpl extends AbstractDataIdentifiedByStringImpl implements File
 	
 	@Override
 	public String toString() {
-		org.cyk.utility.file.File content = getContent();
+		org.cyk.utility.__kernel__.file.File content = getContent();
 		return content == null ? super.toString() : content.getNameAndExtension();
 	}
 }

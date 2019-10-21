@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.cyk.system.file.client</groupId>
 		<artifactId>file-client-_pom</artifactId>
-		<version>0.0.1</version>
+		<version>0.1.0</version>
 	</parent>
 
 	<name>Deployment</name>
@@ -22,12 +22,12 @@
 		<dependency>
 			<groupId>org.cyk.system.file.client.controller.impl</groupId>
 			<artifactId>file-client-controller-impl</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.cyk.jee.utility.client.deployment</groupId>
 			<artifactId>jee-utility-client-deployment</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 		</dependency>
 	</dependencies>		
 
