@@ -14,13 +14,13 @@
 			<to-view-id></to-view-id>
 			<redirect />
 		</navigation-case-->
-		<!--
+		
 		<navigation-case>
 			<from-outcome>fileReadView</from-outcome>
-			<to-view-id>private/file/view.jsf</to-view-id>
+			<to-view-id>/private/file/read.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
-		-->
+		
 	</navigation-rule>
 
 </faces-config>

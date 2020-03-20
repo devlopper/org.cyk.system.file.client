@@ -1,8 +1,8 @@
 package org.cyk.system.file.client.controller.entities;
 
 import org.cyk.system.file.server.representation.entities.FileDto;
+import org.cyk.utility.__kernel__.mapping.AbstractMapperSourceDestinationImpl;
 import org.cyk.utility.client.controller.data.MappingInstantiator;
-import org.cyk.utility.mapping.AbstractMapperSourceDestinationImpl;
 import org.mapstruct.Mapper;
 
 @Mapper(uses= {MappingInstantiator.class})

@@ -16,6 +16,7 @@
 	
 	<properties>
 		<microprofile.archive.name>file-client</microprofile.archive.name>
+		<jboss-web.context-root>file/client</jboss-web.context-root>
 	</properties>
 	
 	<dependencies>
@@ -30,5 +31,37 @@
 			<version>0.1.0</version>
 		</dependency>
 	</dependencies>		
+	
+	<profiles>
+		<profile>
+			<id>deployment.common</id>
+			<properties>
+				<cyk.variable.system.name>File Manager</cyk.variable.system.name>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>deployment.atlantis</id>
+			<properties>
+				<cyk.variable.user.interface.theme.primefaces>atlantis-blue</cyk.variable.user.interface.theme.primefaces>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>deployment.wildfly.local</id>
+			<properties>
+				<cyk.variable.system.proxy.uniform.resource.identifier>http://localhost:8080/file/server/api</cyk.variable.system.proxy.uniform.resource.identifier>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>deployment.wildfly.51.254.200.136</id>
+			<properties>
+				<cyk.variable.system.name>KwordZ</cyk.variable.system.name>
+				<jboss-web.context-root>kwordz/file/client</jboss-web.context-root>
+				<cyk.variable.system.proxy.uniform.resource.identifier>http://51.254.200.136:8080/kwordz/file/server/api</cyk.variable.system.proxy.uniform.resource.identifier>
+			</properties>
+		</profile>
+	</profiles>	
 
 </project>
