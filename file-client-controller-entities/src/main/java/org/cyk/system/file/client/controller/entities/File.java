@@ -3,6 +3,7 @@ package org.cyk.system.file.client.controller.entities;
 import java.io.Serializable;
 
 import org.cyk.utility.__kernel__.object.__static__.controller.AbstractDataIdentifiableSystemStringImpl;
+import org.cyk.utility.__kernel__.object.__static__.controller.annotation.Column;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.experimental.Accessors;
 public class File extends AbstractDataIdentifiableSystemStringImpl implements Serializable {
 
 	private String uniformResourceLocator;
+	@Column
 	private String name;
 	private String extension;
 	private String mimeType;
