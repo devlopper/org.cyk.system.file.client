@@ -15,8 +15,22 @@
 	<packaging>war</packaging>
 	
 	<properties>
-		<microprofile.archive.name>file-client</microprofile.archive.name>
-		<jboss-web.context-root>file/client</jboss-web.context-root>
+		<cyk.variable.system.identifier>file</cyk.variable.system.identifier>
+		<cyk.variable.system.name>File Manager</cyk.variable.system.name>
+		<cyk.variable.system.logging.throwable.print.stack.trace>true</cyk.variable.system.logging.throwable.print.stack.trace>
+		<!-- Theme -->
+		<cyk.variable.user.interface.theme.primefaces>atlantis-blue</cyk.variable.user.interface.theme.primefaces>
+		<cyk.variable.user.interface.theme.class.name>org.cyk.user.interface_.theme.web.jsf.primefaces.atlantis.DesktopDefault</cyk.variable.user.interface.theme.class.name>
+		<cyk.variable.user.interface.theme.jsf.contract>org.cyk.user.interface.theme.web.jsf.primefaces.atlantis.desktop.default</cyk.variable.user.interface.theme.jsf.contract>
+	
+		<!-- Development -->
+
+		<!-- Test -->
+		
+		<!-- Production -->
+		<server.application.jboss.wildfly.prod.hostname>devkoms.com</server.application.jboss.wildfly.prod.hostname>
+		<server.application.jboss.wildfly.prod.username>YmHbUj9LxQ2TCqY9</server.application.jboss.wildfly.prod.username>
+		<server.application.jboss.wildfly.prod.password>g!G4UUgHTq={>he5uR:5s)FrBRJ5C*</server.application.jboss.wildfly.prod.password>	
 	</properties>
 	
 	<dependencies>
@@ -25,37 +39,12 @@
 			<artifactId>file-client-controller-impl</artifactId>
 			<version>0.1.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.cyk.jee.utility.client.deployment</groupId>
-			<artifactId>jee-utility-client-deployment</artifactId>
-			<version>0.1.0</version>
-		</dependency>
+		
 	</dependencies>		
 	
 	<profiles>
 		<profile>
-			<id>deployment.common</id>
-			<properties>
-				<cyk.variable.system.name>File Manager</cyk.variable.system.name>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>deployment.atlantis</id>
-			<properties>
-				<cyk.variable.user.interface.theme.primefaces>atlantis-blue</cyk.variable.user.interface.theme.primefaces>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>deployment.wildfly.local</id>
-			<properties>
-				<cyk.variable.system.proxy.uniform.resource.identifier>http://localhost:8080/file/server/api</cyk.variable.system.proxy.uniform.resource.identifier>
-			</properties>
-		</profile>
-		
-		<profile>
-			<id>deployment.wildfly.51.254.200.136</id>
+			<id>kwordz</id>
 			<properties>
 				<cyk.variable.system.name>KwordZ</cyk.variable.system.name>
 				<jboss-web.context-root>kwordz/file/client</jboss-web.context-root>
