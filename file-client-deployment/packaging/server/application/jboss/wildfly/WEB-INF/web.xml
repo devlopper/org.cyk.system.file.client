@@ -6,6 +6,10 @@
 	
 	<display-name>file Client</display-name>
 	
+	<welcome-file-list>
+		<welcome-file>index.jsf</welcome-file>
+	</welcome-file-list>
+	
 	<context-param>
 		<param-name>cyk.variable.system.identifier</param-name>
 		<param-value>${cyk.variable.system.identifier}</param-value>
