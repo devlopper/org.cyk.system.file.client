@@ -19,10 +19,15 @@
 		<cyk.variable.system.name>File Manager</cyk.variable.system.name>
 		<cyk.variable.system.logging.throwable.print.stack.trace>true</cyk.variable.system.logging.throwable.print.stack.trace>
 		<!-- Theme -->
+		<!--
 		<cyk.variable.user.interface.theme.primefaces>atlantis-blue</cyk.variable.user.interface.theme.primefaces>
 		<cyk.variable.user.interface.theme.class.name>org.cyk.user.interface_.theme.web.jsf.primefaces.atlantis.DesktopDefault</cyk.variable.user.interface.theme.class.name>
 		<cyk.variable.user.interface.theme.jsf.contract>org.cyk.user.interface.theme.web.jsf.primefaces.atlantis.desktop.default</cyk.variable.user.interface.theme.jsf.contract>
-	
+		-->
+		<cyk.variable.user.interface.theme.primefaces>atlantis-blue</cyk.variable.user.interface.theme.primefaces>
+		<cyk.variable.user.interface.theme.class.name>org.cyk.user.interface_.theme.web.jsf.primefaces.atlantis.dgbf.DesktopDefault</cyk.variable.user.interface.theme.class.name>
+		<cyk.variable.user.interface.theme.jsf.contract>org.cyk.jee.user.interface.theme.web.jsf.primefaces.atlantis.dgbf.desktop.default</cyk.variable.user.interface.theme.jsf.contract>
+		
 		<!-- Development -->
 
 		<!-- Test -->
@@ -49,6 +54,43 @@
 				<cyk.variable.system.name>KwordZ</cyk.variable.system.name>
 				<jboss-web.context-root>kwordz/file/client</jboss-web.context-root>
 				<cyk.variable.system.proxy.uniform.resource.identifier>http://51.254.200.136:8080/kwordz/file/server/api</cyk.variable.system.proxy.uniform.resource.identifier>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>dev</id>
+			<properties>
+				<project.build.file.name>file</project.build.file.name>
+				<jboss-web.context-root>/file</jboss-web.context-root>
+				<cyk.variable.system.proxy.uniform.resource.identifier>http://localhost:8180/api</cyk.variable.system.proxy.uniform.resource.identifier>
+				<!--
+				<cyk.variable.user.interface.theme.menu.is.dynamic>false</cyk.variable.user.interface.theme.menu.is.dynamic>				
+				<cyk.variable.keycloak.enabled>false</cyk.variable.keycloak.enabled>
+				<cyk.variable.system.security.authentication.enable>${cyk.variable.keycloak.enabled}</cyk.variable.system.security.authentication.enable>
+				<web-app.security-constraint.web-resource-collection.administrator.url-pattern>/private/*</web-app.security-constraint.web-resource-collection.administrator.url-pattern>
+				<web-app.security-constraint.web-resource-collection.user.url-pattern>/mon_compte/*</web-app.security-constraint.web-resource-collection.user.url-pattern>
+				-->
+				<scriptsFile>script/wildfly/bootablejar/dev/cli.txt</scriptsFile>
+				<propertiesFile>script/wildfly/bootablejar/dev/properties.txt</propertiesFile>
+				<wildfly.port>10190</wildfly.port>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>prod</id>
+			<properties>
+				<project.build.file.name>file</project.build.file.name>
+				<jboss-web.context-root>/file</jboss-web.context-root>
+				<cyk.variable.system.web.context>/file</cyk.variable.system.web.context>
+				<deployment.client.proxy.host>devkoms.com</deployment.client.proxy.host>								
+				<cyk.variable.system.proxy.uniform.resource.identifier>http://devkoms.com/api</cyk.variable.system.proxy.uniform.resource.identifier>
+				<!--
+				<cyk.variable.keycloak.enabled>false</cyk.variable.keycloak.enabled>
+				<cyk.variable.system.security.authentication.enable>true</cyk.variable.system.security.authentication.enable>
+				<cyk.variable.user.interface.theme.menu.is.dynamic>true</cyk.variable.user.interface.theme.menu.is.dynamic>
+				<web-app.security-constraint.web-resource-collection.administrator.url-pattern>/private/*</web-app.security-constraint.web-resource-collection.administrator.url-pattern>
+				<web-app.security-constraint.web-resource-collection.user.url-pattern>/mon_compte/*</web-app.security-constraint.web-resource-collection.user.url-pattern>
+				-->
 			</properties>
 		</profile>
 	</profiles>	
